@@ -1,0 +1,51 @@
+select  * from employees;
+
+select * from regions;
+
+select * from departments;
+
+select first_name,last_name from employees;
+
+select * from employees where salary between 5000 and 10000;
+
+select * from employees where first_name like 'A%';
+
+select * from employees where salary > 5000 and department_id=80;
+
+select * from employees where first_name like '%i';
+
+select * from employees where last_name like 'E_%';
+
+select * from employees where commission_pct is null;
+select * from employees where commission_pct is not null;
+
+select * from employees where hire_date>'20-MAR-05';
+
+select * from employees where hire_date>'20-MAR-06' order by hire_date desc;
+
+select distinct department_name from departments;
+
+select count(distinct department_name) from departments;
+
+select * from employees where  department_id in(50,80);
+select * from employees where  department_id  not in(50,80);
+
+select sum(salary),avg(salary),min(salary),max(salary),count(salary) from employees;
+
+select department_name ,count(department_id)from departments group by department_name;
+
+select department_id, sum(salary),avg(salary),min(salary),max(salary),count(salary) from employees group by department_id;
+
+select upper(first_name) from employees;
+select lower(first_name) from employees;
+select concat(first_name,last_name) as fullname from employees;
+select length(first_name) from employees;
+
+select concat(substring(last_name,1,1),'.',first_name) as full_name from employees;
+
+select to_char(hire_date,'month') from employees;
+
+select to_char(hire_date,'yyyy') from employees;
+
+
+
